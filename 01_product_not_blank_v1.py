@@ -14,4 +14,6 @@ def not_blank(question, error_message):
 
 
 #Main Routine goes here
-name = not_blank("Name: ")
+product_name = not_blank("Product name: ", "Please enter the product name")
+
+

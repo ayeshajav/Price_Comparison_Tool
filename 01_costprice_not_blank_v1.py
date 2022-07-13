@@ -14,4 +14,6 @@ def not_blank(question, error_message):
 
 
 #Main Routine goes here
-name = not_blank("Name: ")
+cost_price = not_blank("Cost Price: ", "please enter the cost price")
+
+

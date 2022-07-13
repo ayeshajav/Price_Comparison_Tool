@@ -1,7 +1,7 @@
 #Functions go here
 
 
-def not_blank(question):
+def not_blank(question, error_message):
     valid = False
 
     while not valid:
@@ -10,8 +10,10 @@ def not_blank(question):
         if response != "": 
             return response 
         else:
-            print ("Sorry - this can't be blank")
+            print (error_message)
 
 
 #Main Routine goes here
-name = not_blank("Name: ")
+budget = not_blank("budget: ", "please enter the budget")
+
+
