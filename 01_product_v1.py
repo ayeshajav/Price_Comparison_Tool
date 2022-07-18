@@ -1,6 +1,6 @@
 #Functions go here
 
-
+#not blank
 def not_blank(question, error_message):
     valid = False
 
@@ -14,6 +14,6 @@ def not_blank(question, error_message):
 
 
 #Main Routine goes here
-weight = not_blank("Weight: ", "Please enter the weight")
+product_name = not_blank("Product name: ", "Please enter the product name")
 
 
