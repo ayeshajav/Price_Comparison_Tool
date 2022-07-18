@@ -6,12 +6,14 @@ def not_blank(question, error_message):
 
     while not valid:
         response = input(question)
+        response = response.strip()
+        print(response)
 
-        if response != "": 
-            return response 
+        if response != "" and response.isalpha(): 
+            return response
         else:
             print (error_message)
 
 
 #Main Routine goes here
-name = not_blank("Name: ", "Please enter your name")
+name = not_blank("Name: ", "Please enter your name and use letters")
