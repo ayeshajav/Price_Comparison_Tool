@@ -1,3 +1,4 @@
+
 #Functions go here
 
 ############# General Functions Starts ################
@@ -31,16 +32,20 @@ def get_input(question, error_message="", validator=no_validation):
 
 ############# General functions ends here  ################
 
-############# budget functions starts here ################
+############# cost price functions starts here ################
          
 # base budget function 
-def budget_base():
-  budget = float(get_input("budget: $", "please enter the budget", is_valid_decimal))
+def cost_price_base():
+  cost_price = float(get_input("Cost Price: $", "please enter the cost price", is_valid_decimal))
 
-  return budget 
+  return cost_price  
   
-############# budget functions ends here ################
+############# cost price functions ends here ################
 
 ######################### Runners ###############################
-budget = budget_base()
+cost_price = cost_price_base()
+
+
+
+
 

@@ -9,6 +9,7 @@ def not_blank(question, error_message):
 
         if response != "" and not response.isalpha(): 
             return float(response)
+
         else:
             print (error_message)
 

@@ -1,60 +1,52 @@
 #Functions go here
+# Weight validator
+def is_valid_decimal(value):
+  is_valid = False
+  try:
+      weight = float(value)
+      if weight > 0:
+        is_valid = True
+  except ValueError:
+    is_valid = False
+  return is_valid
 
-#not blank
-def not_blank(question, error_message):
+def no_validation(value):
+  return value
+
+def is_valid_unit(value):
+  return value # TODO: write unit validation here
+
+  
+# Get Input from user
+def get_input(question, error_message="", validator=no_validation):
     valid = False
 
     while not valid:
-        response = int(input(question))
+        response = input(question)
 
-        if response != "": 
-            return response 
+        if validator(response): 
+            return response
         else:
             print (error_message)
 
+          
+weight = float(get_input("Weight: ", "Please enter the weight", is_valid_decimal))
 
+unit = get_input("(g)rams or (kg)Kilograms: ", "Please choose an appropriate choice", is_valid_unit)
 
-
-def get_weight():
-  product_weight = {
-  "weight": 0,
- }
-  
-  weight = not_blank("Weight: ", "Please enter the weight")
-  
-  end_loop = False
-  
-  while not end_loop:
-    unit = input("(g)rams or (kg)Kilograms: ")
-    if unit.upper() == "G" or unit.upper() == "GRAMS":
+if unit.upper() == "G" or unit.upper() == "GRAMS":
       converted = weight / 1000
       print(f"You are {converted} kilos")
-      product_weight['weight'] = converted
-      end_loop = True
-    elif unit.upper() == "KG" or unit.upper() == "KILOGRAMS":
+     
+      
+elif unit.upper() == "KG" or unit.upper() == "KILOGRAMS":
       converted = weight 
       print(f"You are {converted} kilos")
-      product_weight['weight'] = converted
-      end_loop = True
-    else:
-      print("Please choose an appropriate choice")
-
-    return product_weight
-
-weight = get_weight()
-
-print(weight)
+      
+  
+else:
+    print("Please choose an appropriate choice")
 
 
-product = {
-  "name": "I am rice",
-}
-product.update (weight)
 
-print(product)
-
-loop 
-Productssss = [
-  {'name': 'I am rice', 'weight': 0.044}
-]
 

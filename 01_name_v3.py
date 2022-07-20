@@ -1,17 +1,5 @@
 #Functions go here
-
 ############# General Functions Starts ################
-
-# Validator: Function to check if value is a valid decimal
-def is_valid_decimal(value):
-  is_valid = False
-  try:
-      value_in_float = float(value)
-      if value_in_float > 0:
-        is_valid = True
-  except ValueError:
-    is_valid = False
-  return is_valid
 
 # Validator: Function to use if there is no validator required
 def no_validation(value):
@@ -31,16 +19,23 @@ def get_input(question, error_message="", validator=no_validation):
 
 ############# General functions ends here  ################
 
-############# budget functions starts here ################
-         
-# base budget function 
-def budget_base():
-  budget = float(get_input("budget: $", "please enter the budget", is_valid_decimal))
+############# Name functions starts here ################
 
-  return budget 
+# Validator: Function to check if value is a valid name
+def is_valid_name(value):
+  is_valid = False
+  if value != '' and all(lett.isalpha() or lett.isspace() for lett in value):
+    is_valid = True
+  return is_valid
+
+############# Name functions ends here ################
+
+# base Name function
+def name_base():
+  name = get_input("Name: ", "Please enter your name and use letters", is_valid_name)
+  return name
   
-############# budget functions ends here ################
-
 ######################### Runners ###############################
-budget = budget_base()
+name = name_base()
 
+print(name)
