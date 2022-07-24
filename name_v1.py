@@ -1,6 +1,6 @@
 #Functions go here
 
-#not blank
+#Question cannot be left blank
 def not_blank(question, error_message):
     valid = False
 
@@ -13,10 +13,5 @@ def not_blank(question, error_message):
             print (error_message)
 
 
-#Main Routine goes here
-cost_price = not_blank("Cost Price: $", "please enter the cost price")
-
-
-
-
-
+#Asking for information 
+name = not_blank("Name: ", "Please enter your name")

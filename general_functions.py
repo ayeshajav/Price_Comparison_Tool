@@ -14,3 +14,4 @@ def get_input(question, error_message="", validator=validator_v1.no_validation):
             print (error_message)
 
 ############# General functions ends here  ################
+
